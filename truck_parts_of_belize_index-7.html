@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Truck Parts of Belize | Heavy-Duty Truck & Bus Parts Since 1992</title>
+  <meta name="description" content="Belize’s trusted source for heavy-duty truck and bus parts. Engine, transmission, electrical, suspension, and more. Family owned since 1992." />
+
+  <style>
+    :root{
+      --blue:#001B44;
+      --yellow:#FFD60A;
+      --ink:#0a0a0a;
+      --muted:#6b7280;
+      --bg:#ffffff;
+      --bg-alt:#f7f7f8;
+    }
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial;line-height:1.6;color:var(--ink);background:var(--bg)}
+    .container{width:min(1100px,92%);margin:auto}
+    header{background:var(--bg);border-bottom:3px solid var(--yellow);position:sticky;top:0;z-index:50;padding:.5rem 0}
+    .topbar{display:flex;align-items:center;justify-content:space-between;position:relative}
+    .brand{display:flex;align-items:center;gap:.75rem}
+    .brand img{height:120px;width:auto;border-radius:8px}
+    nav{display:flex;align-items:center;gap:.75rem}
+    nav ul{display:flex;list-style:none;gap:1rem;padding:0;margin:0}
+    nav a{text-decoration:none;color:var(--ink);font-weight:600}
+    nav a:hover{color:var(--blue)}
+    /* Mobile nav toggle */
+    .nav-toggle{display:none;background:transparent;border:2px solid var(--blue);color:var(--blue);padding:.5rem .6rem;border-radius:10px;cursor:pointer;align-items:center;gap:.4rem}
+    .nav-toggle svg{width:20px;height:20px}
+    @media(max-width:719px){
+      .nav-toggle{display:inline-flex}
+      nav ul.menu{position:absolute;right:0;top:100%;background:var(--bg);border:1px solid #e5e7eb;border-radius:12px;padding:.5rem;width:220px;box-shadow:0 10px 24px rgba(0,0,0,.12);display:none;flex-direction:column;gap:.25rem}
+      nav ul.menu.open{display:flex}
+      nav a{padding:.6rem .75rem;display:block}
+    }
+
+    .hero{background:var(--yellow);color:var(--ink);padding:3rem 0;text-align:center}
+    .hero h1{font-size:clamp(1.8rem,2vw+1rem,3rem);margin:.5rem 0}
+    .hero p{max-width:50ch;margin:.5rem auto 1rem}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.2rem;border:none;border-radius:9999px;font-weight:700;cursor:pointer;text-decoration:none}
+    .btn img.icon{width:24px;height:24px;flex:0 0 auto;display:inline-block;vertical-align:middle}
+    .invert-on-dark{filter:invert(1) brightness(2)}
+    .btn--primary{background:var(--blue);color:#fff}
+    .btn--outline{border:2px solid var(--blue);color:var(--blue);background:transparent}
+    section{padding:2.5rem 0}
+    .section__title{font-size:1.7rem;margin-bottom:.5rem;color:var(--blue)}
+    .section__intro{color:var(--muted);max-width:65ch}
+    .grid{display:grid;gap:1rem}
+    @media(min-width:720px){.grid{grid-template-columns:repeat(3,1fr)}}
+    .card{background:var(--bg-alt);border:1px solid #ddd;border-radius:12px;padding:1rem}
+    .results{background:#fdfdfd;font-weight:600}
+    .hours-list{list-style:none;padding:0;margin:.5rem 0 0}
+    .hours-list li{display:flex;justify-content:space-between;border-bottom:1px dotted #ccc;padding:.25rem 0}
+    footer{background:var(--blue);color:#fff;padding:2rem 0}
+    .social a{color:#fff;margin-right:.75rem;text-decoration:none;display:inline-flex;align-items:center;gap:.3rem}
+    .social img.icon{width:20px;height:20px;vertical-align:text-bottom;margin-right:.35rem}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container topbar">
+      <div class="brand">
+        <img src="banner logo (1).png" alt="Truck Parts of Belize logo" />
+        <strong>Truck Parts of Belize</strong>
+      </div>
+      <nav>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
+          Menu
+        </button>
+        <ul id="site-menu" class="menu">
+          <li><a href="#why">Why Us</a></li>
+          <li><a href="#what">What We Do</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <p>Serving Belize since 1992 • Belizean Owned</p>
+      <h1>Heavy-Duty Parts, Expert Advice, and Same-Day Solutions for Belizean Fleets.</h1>
+      <p>Local, family-managed specialists in truck and bus parts. If we don’t have it, we can get it fast—so you can keep moving.</p>
+      <a class="btn btn--primary" href="tel:+5012231540"><img class="icon invert-on-dark" src="icons/phone.png" alt="">Call 223-1540</a>
+      <a class="btn btn--outline" href="https://wa.me/5016108546" target="_blank" rel="noopener"><img class="icon" src="icons/whatsapp.png" alt="">WhatsApp +501 610-8546</a>
+    </div>
+  </section>
+
+  <section id="what" class="container">
+    <h2 class="section__title">What We Do</h2>
+    <p class="section__intro">We carry a complete range of heavy-duty truck and bus parts—covering engines, transmissions, electrical, suspension, steering, brake, and cooling systems, plus accessories and fleet supplies. <strong>If we don’t have it, we can get it.</strong></p>
+  </section>
+
+  <section id="why" class="container">
+    <h2 class="section__title">Why Belize Chooses Us</h2>
+    <div class="grid">
+      <div class="card"><h3>Large In-Stock Selection</h3><p>Hard-to-find heavy-duty parts available locally—so downtime stays low.</p></div>
+      <div class="card"><h3>Trusted Since 1992</h3><p>Family-managed and Belizean owned, serving truckers, bus fleets, and mechanics for 30+ years.</p></div>
+      <div class="card"><h3>Expert, Friendly Service</h3><p>Knowledgeable staff who help you identify the right part the first time.</p></div>
+      <div class="card"><h3>Competitive Pricing</h3><p>Fair, transparent pricing and reliable sourcing when special orders are needed.</p></div>
+      <div class="card"><h3>Nationwide Reach</h3><p>Based in Belize City and helping customers across the country.</p></div>
+      <div class="card"><h3>Belizean Owned</h3><p>Proudly local—supporting Belize’s transport and logistics community.</p></div>
+    </div>
+  </section>
+
+  <section id="faq" class="container">
+    <h2 class="section__title">FAQ</h2>
+    <details><summary>Do you sell to individuals or only businesses?</summary><p>We proudly serve both individuals and businesses across Belize.</p></details>
+    <details><summary>Can you import or custom order parts not in stock?</summary><p>Yes. If we don’t have it, we can get it.</p></details>
+    <details><summary>Do you offer installation or just parts?</summary><p>We have a full-service garage on-site for professional installation.</p></details>
+    <details><summary>What payment methods do you accept?</summary><p>Cash, card, and bank transfer.</p></details>
+  </section>
+
+  <section id="contact" class="container">
+    <h2 class="section__title">Get in Touch</h2>
+    <p><strong>Address:</strong> Phillip Goldson Hwy, Belize City</p>
+    <p><strong>Phone:</strong> <a href="tel:+5012231540">223-1540</a></p>
+    <p><strong>WhatsApp:</strong> <a href="https://wa.me/5016108546" target="_blank" rel="noopener">+501 610-8546</a></p>
+    <p><strong>Email:</strong> <a href="mailto:truckpartsofbelize@gmail.com">truckpartsofbelize@gmail.com</a></p>
+    <div><strong>Hours:</strong>
+      <ul class="hours-list">
+        <li><span>Monday</span><span>8:00 AM – 5:00 PM</span></li>
+        <li><span>Tuesday</span><span>8:00 AM – 5:00 PM</span></li>
+        <li><span>Wednesday</span><span>8:00 AM – 5:00 PM</span></li>
+        <li><span>Thursday</span><span>8:00 AM – 5:00 PM</span></li>
+        <li><span>Friday</span><span>8:00 AM – 5:00 PM</span></li>
+        <li><span>Saturday</span><span>8:00 AM – 2:00 PM</span></li>
+        <li><span>Sunday</span><span>CLOSED</span></li>
+      </ul>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn--primary" href="tel:+5012231540"><img class="icon invert-on-dark" src="icons/phone.png" alt="">Call Now</a>
+      <a class="btn btn--outline" href="https://wa.me/5016108546" target="_blank" rel="noopener"><img class="icon" src="icons/whatsapp.png" alt="">WhatsApp Us</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;">
+      <div>
+        <strong>Truck Parts of Belize Ltd.</strong><br>
+        <small>© 2025 All rights reserved • Belizean owned & family-managed</small>
+      </div>
+      <div class="social">
+        <a href="https://www.facebook.com/truckpartsbelize" target="_blank" rel="noopener"><img class="icon invert-on-dark" src="icons/facebook.png" alt="">Facebook</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle (accessible)
+    const navBtn = document.querySelector('.nav-toggle');
+    const menu = document.getElementById('site-menu');
+    if (navBtn && menu){
+      navBtn.addEventListener('click', () => {
+        const isOpen = menu.classList.toggle('open');
+        navBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        menu.classList.remove('open');
+        navBtn.setAttribute('aria-expanded','false');
+      }));
+    }
+  </script>
+</body>
+</html>
