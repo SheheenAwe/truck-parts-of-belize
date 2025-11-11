@@ -41,6 +41,11 @@
     .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.2rem;border:none;border-radius:9999px;font-weight:700;cursor:pointer;text-decoration:none;line-height:1}
     .btn--primary{background:var(--blue);color:#fff}.btn--outline{border:2px solid var(--blue);color:var(--blue);background:transparent}
     .btn svg,.btn img.icon{width:22px;height:22px;flex:0 0 auto;display:inline-block;vertical-align:middle}
+        /* Make black icons appear white on the primary (navy) button */
+    .btn--primary .icon {
+      filter: brightness(0) invert(1);
+    }
+
     .grid{display:grid;gap:1rem}@media(min-width:720px){.grid{grid-template-columns:repeat(3,1fr)}}.card{background:#fff;border:1px solid var(--divider);border-radius:12px;padding:1rem}
     .hours-list{list-style:none;padding:0;margin:.5rem 0 0}.hours-list li{display:flex;justify-content:space-between;border-bottom:1px dotted #ccc;padding:.25rem 0}
     .map-wrap{margin-top:1rem;border:1px solid var(--divider);border-radius:12px;overflow:hidden;background:#fff;max-width:680px;margin-inline:auto}
