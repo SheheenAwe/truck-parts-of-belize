@@ -55,6 +55,11 @@
     .hero{background:var(--yellow);color:var(--ink);padding:3rem 0;text-align:center}
     .hero h1{font-size:clamp(1.8rem,2vw+1rem,3rem);margin:.5rem 0}.hero p{max-width:60ch;margin:.5rem auto 1rem}
     .btn{display:inline-flex;align-items:center;gap:.1rem;padding:.9rem 1.2rem;border:none;border-radius:9999px;font-weight:700;cursor:pointer;text-decoration:none;line-height:1}
+    /* Add vertical space between stacked hero buttons */
+    .hero .btn + .btn {
+      margin-top: 1rem;   /* increase to 1.25rem if you want more space */
+    }
+
     .btn--primary{background:var(--blue);color:#fff}.btn--outline{border:2px solid var(--blue);color:var(--blue);background:transparent}
     .btn svg,.btn img.icon{width:22px;height:22px;flex:0 0 auto;display:inline-block;vertical-align:middle}
         /* Make black icons appear white on the primary (navy) button */
