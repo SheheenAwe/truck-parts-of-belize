@@ -84,14 +84,14 @@
     }
     .header-cta a{
       text-decoration:none;
-      font-weight:900;
-      font-size:1.2rem;
+      font-weight:950;
+      font-size:1.25rem;
       color:var(--blue);
     }
     .header-cta .sub{
-      font-size:.9rem;
+      font-size:.92rem;
       color:var(--muted);
-      font-weight:700;
+      font-weight:850;
     }
 
     nav{display:flex;align-items:center;gap:.75rem}
@@ -102,7 +102,7 @@
       padding:0;
       margin:0;
     }
-    nav a{text-decoration:none;color:var(--ink);font-weight:700}
+    nav a{text-decoration:none;color:var(--ink);font-weight:750}
     nav a:hover{color:var(--blue)}
 
     .nav-toggle{
@@ -115,7 +115,7 @@
       cursor:pointer;
       align-items:center;
       gap:.4rem;
-      font-weight:800;
+      font-weight:850;
     }
     .nav-toggle svg{width:20px;height:20px}
 
@@ -166,7 +166,7 @@
     .hero .micro{
       margin:.5rem auto 0;
       color:rgba(10,10,10,.75);
-      font-weight:700;
+      font-weight:800;
       font-size:.95rem;
     }
 
@@ -179,7 +179,7 @@
       padding:.95rem 1.25rem;
       border:none;
       border-radius:9999px;
-      font-weight:800;
+      font-weight:850;
       cursor:pointer;
       text-decoration:none;
       line-height:1;
@@ -211,7 +211,7 @@
       padding:1rem;
     }
     .card h3{margin:.1rem 0 .35rem;font-size:1.05rem;color:var(--blue)}
-    .card p{margin:0;color:var(--muted)}
+    .card p{margin:0;color:var(--muted);font-weight:650}
 
     /* Simple trust strip */
     .trust-strip{
@@ -221,12 +221,12 @@
       gap:.75rem 1.25rem;
       justify-content:center;
       color:var(--muted);
-      font-weight:800;
+      font-weight:850;
     }
 
     /* FAQ */
     details summary{
-      font-weight:800;
+      font-weight:850;
       font-size:1.05rem;
       color:var(--blue);
       cursor:pointer;
@@ -262,7 +262,7 @@
     }
     .call-block .small{
       color:var(--muted);
-      font-weight:800;
+      font-weight:850;
       margin:0 0 .8rem;
     }
     .contact-lines p{margin:.45rem 0}
@@ -361,7 +361,7 @@
       display:inline-flex;
       align-items:center;
       gap:.4rem;
-      font-weight:800;
+      font-weight:850;
     }
     .social img{width:20px;height:20px}
     .credit{opacity:.9}
@@ -406,11 +406,16 @@
   <!-- Sticky Mobile Call Bar -->
   <div class="sticky-bar" role="region" aria-label="Quick contact bar">
     <div class="wrap">
-      <a class="btn btn--primary" href="tel:+5012231540" aria-label="Call 223-1540">
-        <img class="icon" src="icons/phone.svg" alt="" />
-        Call Now
+      <!-- Primary action swaps to WhatsApp when CLOSED -->
+      <a class="btn btn--primary" id="stickyPrimaryBtn" href="tel:+5012231540" aria-label="Call 223-1540">
+        <img class="icon" id="stickyPrimaryIcon" src="icons/phone.svg" alt="" />
+        <span id="stickyPrimaryText">Call Now</span>
       </a>
-      <a class="btn btn--outline" href="https://wa.me/5016108546?text=Hello%2C%20I%E2%80%99m%20looking%20for%20a%20truck%20part.%20Can%20you%20check%20availability%20for%20me%3F" target="_blank" rel="noopener" aria-label="WhatsApp +501 610-8546">
+
+      <!-- Secondary action swaps to Call when CLOSED -->
+      <a class="btn btn--outline" id="stickySecondaryBtn"
+         href="https://wa.me/5016108546?text=Hello%2C%20I%E2%80%99m%20looking%20for%20a%20truck%20part.%20Can%20you%20check%20availability%20for%20me%3F"
+         target="_blank" rel="noopener" aria-label="WhatsApp +501 610-8546">
         <img class="icon" src="icons/whatsapp.svg" alt="" />
         WhatsApp
       </a>
@@ -443,7 +448,7 @@
 
       <div class="header-cta" aria-label="Call us">
         <a href="tel:+5012231540">📞 223-1540</a>
-        <div class="sub">Open Until 5PM</div>
+        <div class="sub" id="open-status">Hours: Mon–Fri 8–5 • Sat 8–3</div>
       </div>
     </div>
   </header>
@@ -454,21 +459,25 @@
       <div class="container">
         <h1>Belize’s Most Trusted Heavy-Duty Truck Parts Supplier Since 1992</h1>
         <p>In-stock inventory. Fast sourcing. Expert advice you can rely on.</p>
-        <p class="micro">Call now to check availability.</p>
+        <p class="micro" id="heroStatusLine">Call now to check availability.</p>
 
         <div class="hero-actions" role="group" aria-label="Primary actions">
-          <a class="btn btn--primary" href="tel:+5012231540" aria-label="Call 223-1540">
-            <img class="icon" src="icons/phone.svg" alt="" />
-            Call 223-1540
+          <!-- Primary swaps to WhatsApp when CLOSED -->
+          <a class="btn btn--primary" id="heroPrimaryBtn" href="tel:+5012231540" aria-label="Call 223-1540">
+            <img class="icon" id="heroPrimaryIcon" src="icons/phone.svg" alt="" />
+            <span id="heroPrimaryText">Call 223-1540</span>
           </a>
 
-          <a class="btn btn--outline" href="https://wa.me/5016108546?text=Hello%2C%20I%E2%80%99m%20looking%20for%20a%20truck%20part.%20Can%20you%20check%20availability%20for%20me%3F" target="_blank" rel="noopener" aria-label="WhatsApp +501 610-8546">
+          <!-- Always-available WhatsApp button -->
+          <a class="btn btn--outline" id="heroWhatsAppBtn"
+             href="https://wa.me/5016108546?text=Hello%2C%20I%E2%80%99m%20looking%20for%20a%20truck%20part.%20Can%20you%20check%20availability%20for%20me%3F"
+             target="_blank" rel="noopener" aria-label="WhatsApp +501 610-8546">
             <img class="icon" src="icons/whatsapp.svg" alt="" />
             WhatsApp
           </a>
         </div>
 
-        <div class="micro" style="margin-top:.75rem;">
+        <div class="micro" style="margin-top:.75rem;" id="heroMicroLine">
           Speak directly with a parts specialist.
         </div>
       </div>
@@ -491,7 +500,7 @@
         <div class="grid" aria-label="Trust highlights">
           <div class="card">
             <h3>5-Star Rated Across Belize</h3>
-            <p>★★★★★ 5.0 on Google (3 reviews). Trusted locally for decades.</p>
+            <p>★★★★★ 5.0 Google Rating. Trusted by mechanics and fleet owners across Belize.</p>
           </div>
           <div class="card">
             <h3>Parts in Stock — Less Downtime</h3>
@@ -523,11 +532,13 @@
         <p>Speak directly with our parts team to confirm availability and pricing.</p>
 
         <div class="actions" role="group" aria-label="Call to action">
-          <a class="btn btn--primary" href="tel:+5012231540" aria-label="Call 223-1540">
+          <a class="btn btn--primary" id="midCallBtn" href="tel:+5012231540" aria-label="Call 223-1540">
             <img class="icon" src="icons/phone.svg" alt="" />
             Call Now
           </a>
-          <a class="btn btn--outline" href="https://wa.me/5016108546?text=Hello%2C%20I%E2%80%99m%20looking%20for%20a%20truck%20part.%20Can%20you%20check%20availability%20for%20me%3F" target="_blank" rel="noopener" aria-label="WhatsApp +501 610-8546">
+          <a class="btn btn--outline" id="midWaBtn"
+             href="https://wa.me/5016108546?text=Hello%2C%20I%E2%80%99m%20looking%20for%20a%20truck%20part.%20Can%20you%20check%20availability%20for%20me%3F"
+             target="_blank" rel="noopener" aria-label="WhatsApp +501 610-8546">
             <img class="icon" src="icons/whatsapp.svg" alt="" />
             WhatsApp
           </a>
@@ -578,14 +589,16 @@
         <div class="contact-lead">
           <div class="call-block">
             <div class="big">📞 <a href="tel:+5012231540" style="text-decoration:none;color:inherit;">223-1540</a></div>
-            <p class="small">Open Until 5PM • Speak directly with a parts specialist</p>
+            <p class="small" id="contactStatusLine">Speak directly with a parts specialist</p>
 
             <div class="map-actions" role="group" aria-label="Primary contact actions">
-              <a class="btn btn--primary" href="tel:+5012231540" aria-label="Call 223-1540">
+              <a class="btn btn--primary" id="contactCallBtn" href="tel:+5012231540" aria-label="Call 223-1540">
                 <img class="icon" src="icons/phone.svg" alt="" />
                 Call Now
               </a>
-              <a class="btn btn--outline" href="https://wa.me/5016108546?text=Hello%2C%20I%E2%80%99m%20looking%20for%20a%20truck%20part.%20Can%20you%20check%20availability%20for%20me%3F" target="_blank" rel="noopener" aria-label="WhatsApp +501 610-8546">
+              <a class="btn btn--outline" id="contactWaBtn"
+                 href="https://wa.me/5016108546?text=Hello%2C%20I%E2%80%99m%20looking%20for%20a%20truck%20part.%20Can%20you%20check%20availability%20for%20me%3F"
+                 target="_blank" rel="noopener" aria-label="WhatsApp +501 610-8546">
                 <img class="icon" src="icons/whatsapp.svg" alt="" />
                 WhatsApp
               </a>
@@ -711,6 +724,162 @@
       window.addEventListener('resize', () => {
         if (window.matchMedia('(min-width: 720px)').matches) closeMenu();
       });
+    })();
+
+    // Dynamic open/closed status + WhatsApp-first when CLOSED (Belize time).
+    (function () {
+      const TZ = 'America/Belize';
+
+      // Business hours (24h):
+      // Mon–Fri: 08:00–17:00, Sat: 08:00–15:00, Sun: closed
+      const HOURS = {
+        1: { open: 8, close: 17 }, // Mon
+        2: { open: 8, close: 17 }, // Tue
+        3: { open: 8, close: 17 }, // Wed
+        4: { open: 8, close: 17 }, // Thu
+        5: { open: 8, close: 17 }, // Fri
+        6: { open: 8, close: 15 }  // Sat
+        // 0 (Sun) omitted = closed
+      };
+
+      const waMsg = "Hello, I’m looking for a truck part. Can you check availability for me?";
+      const waMsgEncoded = encodeURIComponent(waMsg);
+      const waPrimary = `https://wa.me/5016108546?text=${waMsgEncoded}`;
+
+      const els = {
+        status: document.getElementById('open-status'),
+        heroStatus: document.getElementById('heroStatusLine'),
+        contactStatus: document.getElementById('contactStatusLine'),
+
+        heroBtn: document.getElementById('heroPrimaryBtn'),
+        heroIcon: document.getElementById('heroPrimaryIcon'),
+        heroText: document.getElementById('heroPrimaryText'),
+
+        stickyBtn: document.getElementById('stickyPrimaryBtn'),
+        stickyIcon: document.getElementById('stickyPrimaryIcon'),
+        stickyText: document.getElementById('stickyPrimaryText'),
+        stickySecondary: document.getElementById('stickySecondaryBtn'),
+
+        midCallBtn: document.getElementById('midCallBtn'),
+        contactCallBtn: document.getElementById('contactCallBtn'),
+        contactWaBtn: document.getElementById('contactWaBtn')
+      };
+
+      // Get Belize day/hour/minute using Intl (works cross-browser)
+      const parts = new Intl.DateTimeFormat('en-US', {
+        timeZone: TZ,
+        weekday: 'short',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+      }).formatToParts(new Date());
+
+      const map = Object.fromEntries(parts.map(p => [p.type, p.value]));
+      const weekday = map.weekday; // Mon, Tue, ...
+      const hour = Number(map.hour);
+      const minute = Number(map.minute);
+
+      const dayIndex = ({Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6})[weekday] ?? 0;
+
+      const todays = HOURS[dayIndex] || null;
+      const minutesNow = hour * 60 + minute;
+
+      let isOpen = false;
+      let closesAt = null;
+
+      if (todays) {
+        const openMin = todays.open * 60;
+        const closeMin = todays.close * 60;
+        isOpen = minutesNow >= openMin && minutesNow < closeMin;
+        closesAt = todays.close;
+      }
+
+      const formatClose = (h) => {
+        const period = h >= 12 ? 'PM' : 'AM';
+        const hr12 = ((h + 11) % 12) + 1;
+        return `${hr12}PM`.includes('PM') && h !== 12 ? `${((h+11)%12)+1}:00 PM` : `${((h+11)%12)+1}:00 ${period}`;
+      };
+
+      // Correct, simple formatter
+      const formatHour = (h) => {
+        const period = h >= 12 ? 'PM' : 'AM';
+        const hr12 = ((h + 11) % 12) + 1;
+        return `${hr12}:00 ${period}`;
+      };
+
+      // Update status lines
+      if (els.status) {
+        els.status.textContent = isOpen
+          ? `Open Now — Closes at ${formatHour(closesAt)}`
+          : `Closed Now — Message us on WhatsApp`;
+      }
+      if (els.heroStatus) {
+        els.heroStatus.textContent = isOpen
+          ? `Call now to check availability.`
+          : `We’re closed right now — message us on WhatsApp.`;
+      }
+      if (els.contactStatus) {
+        els.contactStatus.textContent = isOpen
+          ? `Open now — call to check availability.`
+          : `Closed now — message us on WhatsApp and we’ll respond as soon as possible.`;
+      }
+
+      // Swap PRIMARY action based on open/closed
+      const setPrimaryToWhatsApp = () => {
+        // HERO primary -> WhatsApp
+        if (els.heroBtn && els.heroIcon && els.heroText) {
+          els.heroBtn.href = waPrimary;
+          els.heroBtn.setAttribute('target', '_blank');
+          els.heroBtn.setAttribute('rel', 'noopener');
+          els.heroBtn.setAttribute('aria-label', 'Message us on WhatsApp');
+          els.heroIcon.src = 'icons/whatsapp.svg';
+          els.heroText.textContent = 'WhatsApp Us';
+        }
+
+        // Sticky primary -> WhatsApp
+        if (els.stickyBtn && els.stickyIcon && els.stickyText) {
+          els.stickyBtn.href = waPrimary;
+          els.stickyBtn.setAttribute('target', '_blank');
+          els.stickyBtn.setAttribute('rel', 'noopener');
+          els.stickyBtn.setAttribute('aria-label', 'Message us on WhatsApp');
+          els.stickyIcon.src = 'icons/whatsapp.svg';
+          els.stickyText.textContent = 'WhatsApp';
+        }
+
+        // Sticky secondary -> Call
+        if (els.stickySecondary) {
+          els.stickySecondary.href = 'tel:+5012231540';
+          els.stickySecondary.removeAttribute('target');
+          els.stickySecondary.removeAttribute('rel');
+          els.stickySecondary.setAttribute('aria-label', 'Call 223-1540');
+          els.stickySecondary.innerHTML = '<img class="icon" src="icons/phone.svg" alt="" /> Call';
+        }
+
+        // Mid-page call button -> WhatsApp (optional but consistent)
+        if (els.midCallBtn) {
+          els.midCallBtn.href = waPrimary;
+          els.midCallBtn.setAttribute('target', '_blank');
+          els.midCallBtn.setAttribute('rel', 'noopener');
+          els.midCallBtn.setAttribute('aria-label', 'Message us on WhatsApp');
+          els.midCallBtn.innerHTML = '<img class="icon" src="icons/whatsapp.svg" alt="" /> WhatsApp Us';
+        }
+
+        // Contact call button -> WhatsApp (optional but consistent)
+        if (els.contactCallBtn) {
+          els.contactCallBtn.href = waPrimary;
+          els.contactCallBtn.setAttribute('target', '_blank');
+          els.contactCallBtn.setAttribute('rel', 'noopener');
+          els.contactCallBtn.setAttribute('aria-label', 'Message us on WhatsApp');
+          els.contactCallBtn.innerHTML = '<img class="icon" src="icons/whatsapp.svg" alt="" /> WhatsApp Us';
+        }
+
+        // Contact WhatsApp button remains WhatsApp (no change)
+        if (els.contactWaBtn) {
+          els.contactWaBtn.href = waPrimary;
+        }
+      };
+
+      if (!isOpen) setPrimaryToWhatsApp();
     })();
   </script>
 </body>
