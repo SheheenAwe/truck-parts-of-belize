@@ -4,194 +4,635 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Truck Parts of Belize | Heavy-Duty Truck & Bus Parts Since 1992</title>
-  <meta name="description" content="Belize’s trusted source for heavy-duty truck and bus parts. Engine, transmission, electrical, suspension, steering, brakes and more. Family owned and Belizean managed since 1992." />
+  <meta name="description" content="Belize’s trusted source for heavy-duty truck and bus parts. In-stock inventory, fast sourcing, and expert advice. Family owned and Belizean managed since 1992." />
+
+  <!-- Open Graph (Facebook sharing) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Truck Parts of Belize — Trusted Since 1992" />
+  <meta property="og:description" content="In-stock heavy-duty truck & bus parts, fast sourcing, and expert advice. Call now to check availability." />
+  <!-- Replace with your real image URL (recommended 1200x630) -->
+  <meta property="og:image" content="https://truckpartsbelize.com/images/og-image.jpg" />
+  <meta property="og:url" content="https://truckpartsbelize.com/" />
+
   <style>
-    :root{--blue:#001B44;--yellow:#FFD60A;--ink:#0a0a0a;--muted:#6b7280;--bg:#ffffff;--bg-alt:#f7f7f8;--divider:#e5e7eb;--focus:#2b6cb0}
-    *{box-sizing:border-box}html,body{margin:0;padding:0}
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial;line-height:1.6;background:var(--bg);color:var(--ink)}
-    a{color:inherit}a:focus-visible,button:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:6px}
-    .skip-link{position:absolute;left:-9999px}.skip-link:focus{left:0;top:0;background:#fff;padding:.5rem .75rem;border:2px solid var(--blue);z-index:1000}
+    :root{
+      --blue:#001B44;
+      --yellow:#FFD60A;
+      --ink:#0a0a0a;
+      --muted:#6b7280;
+      --bg:#ffffff;
+      --bg-alt:#f7f7f8;
+      --divider:#e5e7eb;
+      --focus:#2b6cb0;
+      --shadow:0 10px 24px rgba(0,0,0,.12);
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial;
+      line-height:1.6;
+      background:var(--bg);
+      color:var(--ink);
+      overflow-x:hidden; /* helps prevent Android side-scroll from minor overflow */
+    }
+    img,svg,iframe{max-width:100%}
+    a{color:inherit}
+    a:focus-visible,button:focus-visible{
+      outline:3px solid var(--focus);
+      outline-offset:2px;
+      border-radius:8px;
+    }
+
+    .skip-link{position:absolute;left:-9999px}
+    .skip-link:focus{
+      left:0;top:0;background:#fff;padding:.5rem .75rem;border:2px solid var(--blue);z-index:1000
+    }
+
     .container{width:min(1100px,92%);margin:auto}
-    header{background:var(--bg);border-bottom:3px solid var(--yellow);position:sticky;top:0;z-index:50;padding:.5rem 0}
-    .topbar{display:flex;align-items:center;justify-content:space-between;position:relative;gap:1rem}
+
+    header{
+      background:var(--bg);
+      border-bottom:3px solid var(--yellow);
+      position:sticky;
+      top:0;
+      z-index:60;
+      padding:.5rem 0;
+    }
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+      position:relative;
+    }
     .brand{display:flex;align-items:center;gap:.75rem;min-width:0}
-    .brand img{height:120px;width:auto;border-radius:8px}
-    /* Bigger brand text (matches hero h1 sizing) */
-    .brand-name{font-weight:800;font-size:clamp(1.8rem,2vw + 1rem,3rem);line-height:1.1;white-space:nowrap}
-    @media(max-width:719px){
-      .brand img{height:80px}
-      .brand-name{white-space:normal}
+    .brand img{height:96px;width:auto;border-radius:10px}
+    .brand-name{
+      font-weight:800;
+      font-size:clamp(1.5rem,2vw + 1rem,2.4rem);
+      line-height:1.1;
+      white-space:nowrap;
     }
+
+    /* Header CTA (desktop) */
+    .header-cta{
+      display:none;
+      text-align:right;
+      line-height:1.15;
+      white-space:nowrap;
+    }
+    .header-cta a{
+      text-decoration:none;
+      font-weight:900;
+      font-size:1.2rem;
+      color:var(--blue);
+    }
+    .header-cta .sub{
+      font-size:.9rem;
+      color:var(--muted);
+      font-weight:700;
+    }
+
     nav{display:flex;align-items:center;gap:.75rem}
-    nav ul{display:flex;list-style:none;gap:1rem;padding:0;margin:0}
-    nav a{text-decoration:none;color:var(--ink);font-weight:600}
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:1rem;
+      padding:0;
+      margin:0;
+    }
+    nav a{text-decoration:none;color:var(--ink);font-weight:700}
     nav a:hover{color:var(--blue)}
-    .nav-toggle{display:none;background:transparent;border:2px solid var(--blue);color:var(--blue);padding:.5rem .6rem;border-radius:10px;cursor:pointer;align-items:center;gap:.4rem}
+
+    .nav-toggle{
+      display:none;
+      background:transparent;
+      border:2px solid var(--blue);
+      color:var(--blue);
+      padding:.5rem .6rem;
+      border-radius:12px;
+      cursor:pointer;
+      align-items:center;
+      gap:.4rem;
+      font-weight:800;
+    }
     .nav-toggle svg{width:20px;height:20px}
+
+    /* Mobile menu dropdown */
     @media(max-width:719px){
+      .brand img{height:74px}
+      .brand-name{white-space:normal}
       .nav-toggle{display:inline-flex}
-      nav ul.menu{position:absolute;right:0;top:100%;background:var(--bg);border:1px solid var(--divider);border-radius:12px;padding:.5rem;width:220px;box-shadow:0 10px 24px rgba(0,0,0,.12);display:none;flex-direction:column;gap:.25rem}
+      nav ul.menu{
+        position:absolute;
+        right:0;
+        top:100%;
+        background:var(--bg);
+        border:1px solid var(--divider);
+        border-radius:14px;
+        padding:.5rem;
+        width:230px;
+        box-shadow:var(--shadow);
+        display:none;
+        flex-direction:column;
+        gap:.25rem;
+        z-index:80;
+      }
       nav ul.menu.open{display:flex}
-      nav a{padding:.6rem .75rem;display:block}
-    }
-    section{padding:2.75rem 0}.section--alt{background:var(--bg-alt)}.section--divider{border-top:1px solid var(--divider)}
-    .section__title{font-size:1.7rem;margin-bottom:.5rem;color:var(--blue)}.section__intro{color:var(--muted);max-width:65ch}
-        /* FAQ Styling */
-    details summary {
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: #001B44;
-      cursor: pointer;
-      margin-bottom: .4rem;
-    }
-    details summary:hover {
-      text-decoration: underline;
-    }
-    details p {
-      margin-left: 1rem;
-      margin-top: .3rem;
+      nav a{padding:.65rem .8rem;display:block;border-radius:10px}
+      nav a:hover{background:var(--bg-alt)}
     }
 
-    .hero{background:var(--yellow);color:var(--ink);padding:3rem 0;text-align:center}
-    .hero h1{font-size:clamp(1.8rem,2vw+1rem,3rem);margin:.5rem 0}.hero p{max-width:60ch;margin:.5rem auto 1rem}
-    .btn{display:inline-flex;align-items:center;gap:.1rem;padding:.9rem 1.2rem;border:none;border-radius:9999px;font-weight:700;cursor:pointer;text-decoration:none;line-height:1}
-    /* Add vertical space between stacked hero buttons */
-    .hero .btn + .btn {
-      margin-top: 1rem;   /* increase to 1.25rem if you want more space */
+    @media(min-width:720px){
+      .header-cta{display:block}
     }
 
-    .btn--primary{background:var(--blue);color:#fff}.btn--outline{border:2px solid var(--blue);color:var(--blue);background:transparent}
+    section{padding:2.75rem 0}
+    .section--alt{background:var(--bg-alt)}
+    .section--divider{border-top:1px solid var(--divider)}
+    .section__title{font-size:1.7rem;margin:0 0 .5rem;color:var(--blue)}
+    .section__intro{color:var(--muted);max-width:70ch;margin:0}
+
+    /* Hero */
+    .hero{
+      background:var(--yellow);
+      color:var(--ink);
+      padding:3rem 0;
+      text-align:center;
+    }
+    .hero h1{font-size:clamp(1.8rem,2vw+1rem,3rem);margin:.25rem 0 .35rem}
+    .hero p{max-width:62ch;margin:.35rem auto 1.15rem}
+    .hero .micro{
+      margin:.5rem auto 0;
+      color:rgba(10,10,10,.75);
+      font-weight:700;
+      font-size:.95rem;
+    }
+
+    /* Buttons */
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.5rem;
+      padding:.95rem 1.25rem;
+      border:none;
+      border-radius:9999px;
+      font-weight:800;
+      cursor:pointer;
+      text-decoration:none;
+      line-height:1;
+      white-space:nowrap;
+      max-width:100%;
+    }
+    .btn--primary{background:var(--blue);color:#fff}
+    .btn--outline{border:2px solid var(--blue);color:var(--blue);background:transparent}
     .btn svg,.btn img.icon{width:22px;height:22px;flex:0 0 auto;display:inline-block;vertical-align:middle}
-        /* Make black icons appear white on the primary (navy) button */
-    .btn--primary .icon {
-      filter: brightness(0) invert(1);
+    .btn--primary .icon{filter:brightness(0) invert(1)}
+
+    .hero-actions{
+      display:flex;
+      flex-direction:column;
+      gap:1rem;
+      align-items:center;
+    }
+    @media(min-width:720px){
+      .hero-actions{flex-direction:row;justify-content:center}
     }
 
-    .grid{display:grid;gap:1rem}@media(min-width:720px){.grid{grid-template-columns:repeat(3,1fr)}}.card{background:#fff;border:1px solid var(--divider);border-radius:12px;padding:1rem}
-    .hours-list{list-style:none;padding:0;margin:.5rem 0 0}.hours-list li{display:flex;justify-content:space-between;border-bottom:1px dotted #ccc;padding:.25rem 0}
-    .map-wrap{margin-top:1rem;border:1px solid var(--divider);border-radius:12px;overflow:hidden;background:#fff;max-width:680px;margin-inline:auto}
-    .map-embed{width:100%;aspect-ratio:16/9;border:0}.map-actions{display:flex;gap:.75rem;margin-top:.75rem;justify-content:center}
-    footer{background:var(--blue);color:#fff;padding:2rem 0}
-    .footer-row{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
-    .social a{color:#fff;margin-right:.75rem;text-decoration:none;display:inline-flex;align-items:center;gap:.3rem}
+    /* Grids / Cards */
+    .grid{display:grid;gap:1rem}
+    @media(min-width:720px){.grid{grid-template-columns:repeat(4,1fr)}}
+    .card{
+      background:#fff;
+      border:1px solid var(--divider);
+      border-radius:14px;
+      padding:1rem;
+    }
+    .card h3{margin:.1rem 0 .35rem;font-size:1.05rem;color:var(--blue)}
+    .card p{margin:0;color:var(--muted)}
+
+    /* Simple trust strip */
+    .trust-strip{
+      margin-top:1rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap:.75rem 1.25rem;
+      justify-content:center;
+      color:var(--muted);
+      font-weight:800;
+    }
+
+    /* FAQ */
+    details summary{
+      font-weight:800;
+      font-size:1.05rem;
+      color:var(--blue);
+      cursor:pointer;
+      margin-bottom:.4rem;
+    }
+    details summary:hover{text-decoration:underline}
+    details p{margin:0 0 0 1rem;color:var(--muted)}
+
+    /* Contact */
+    .contact-lead{
+      display:grid;
+      gap:1rem;
+      align-items:start;
+    }
+    @media(min-width:900px){
+      .contact-lead{
+        grid-template-columns: 1.1fr .9fr;
+        gap:2rem;
+      }
+    }
+
+    .call-block{
+      background:#fff;
+      border:1px solid var(--divider);
+      border-radius:16px;
+      padding:1.1rem;
+    }
+    .call-block .big{
+      font-weight:950;
+      font-size:clamp(1.6rem,2vw + 1rem,2.2rem);
+      color:var(--blue);
+      margin:.1rem 0 .15rem;
+    }
+    .call-block .small{
+      color:var(--muted);
+      font-weight:800;
+      margin:0 0 .8rem;
+    }
+    .contact-lines p{margin:.45rem 0}
+    .contact-lines strong{color:var(--blue)}
+    .contact-lines a{text-decoration:underline}
+
+    .hours-list{list-style:none;padding:0;margin:.5rem 0 0}
+    .hours-list li{display:flex;justify-content:space-between;border-bottom:1px dotted #ccc;padding:.25rem 0}
+
+    .map-wrap{
+      border:1px solid var(--divider);
+      border-radius:16px;
+      overflow:hidden;
+      background:#fff;
+    }
+    .map-embed{width:100%;aspect-ratio:16/9;border:0}
+
+    /* Map actions (fix Android overflow) */
+    .map-actions{
+      display:flex;
+      flex-wrap:wrap;          /* prevents overflow */
+      gap:.75rem;
+      justify-content:center;
+      margin-top:1rem;
+      max-width:100%;
+    }
+    .map-actions .btn{
+      flex:1 1 180px;          /* wraps nicely */
+      min-width:180px;
+    }
+    @media(max-width:420px){
+      .map-actions .btn{min-width:100%} /* stack on very small screens */
+    }
+
+    /* Mid-page call section */
+    .callout{
+      text-align:center;
+    }
+    .callout p{margin:.35rem auto 1rem;color:var(--muted);max-width:70ch}
+    .callout .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.75rem;
+      justify-content:center;
+    }
+
+    /* Sticky mobile bar */
+    .sticky-bar{
+      position:fixed;
+      left:0;
+      right:0;
+      bottom:0;
+      z-index:90;
+      padding:.65rem .75rem calc(.65rem + env(safe-area-inset-bottom));
+      background:rgba(255,255,255,.92);
+      border-top:1px solid var(--divider);
+      backdrop-filter:saturate(1.1) blur(8px);
+      display:none;
+    }
+    .sticky-bar .wrap{
+      width:min(1100px,92%);
+      margin:auto;
+      display:flex;
+      gap:.75rem;
+    }
+    .sticky-bar a{
+      flex:1 1 50%;
+      border-radius:14px;
+      padding:1rem .9rem;
+      font-weight:950;
+      justify-content:center;
+    }
+
+    @media(max-width:767px){
+      .sticky-bar{display:block}
+      /* add bottom padding so content doesn't hide under sticky bar */
+      body{padding-bottom:92px}
+    }
+
+    footer{
+      background:var(--blue);
+      color:#fff;
+      padding:2rem 0;
+    }
+    .footer-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:1rem;
+      flex-wrap:wrap;
+    }
+    .social a{
+      color:#fff;
+      margin-right:.75rem;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:.4rem;
+      font-weight:800;
+    }
     .social img{width:20px;height:20px}
     .credit{opacity:.9}
     .credit a{color:#fff;text-decoration:underline}
   </style>
+
+  <!-- LocalBusiness / AutoPartsStore Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoPartsStore",
+    "name": "Truck Parts of Belize",
+    "url": "https://truckpartsbelize.com/",
+    "telephone": "+5012231540",
+    "email": "truckpartsofbelize@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Phillip Goldson Hwy",
+      "addressLocality": "Belize City",
+      "addressCountry": "BZ"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "3"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "08:00", "closes": "17:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "08:00", "closes": "17:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "08:00", "closes": "17:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "08:00", "closes": "17:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "08:00", "closes": "17:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "15:00" }
+    ]
+  }
+  </script>
 </head>
+
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- Sticky Mobile Call Bar -->
+  <div class="sticky-bar" role="region" aria-label="Quick contact bar">
+    <div class="wrap">
+      <a class="btn btn--primary" href="tel:+5012231540" aria-label="Call 223-1540">
+        <img class="icon" src="icons/phone.svg" alt="" />
+        Call Now
+      </a>
+      <a class="btn btn--outline" href="https://wa.me/5016108546?text=Hello%2C%20I%E2%80%99m%20looking%20for%20a%20truck%20part.%20Can%20you%20check%20availability%20for%20me%3F" target="_blank" rel="noopener" aria-label="WhatsApp +501 610-8546">
+        <img class="icon" src="icons/whatsapp.svg" alt="" />
+        WhatsApp
+      </a>
+    </div>
+  </div>
+
   <header>
     <div class="container topbar">
       <div class="brand">
-      
         <img src="images/logo.png" alt="Truck Parts of Belize logo" />
         <strong class="brand-name">Truck Parts of Belize</strong>
       </div>
+
       <nav aria-label="Main">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 6h18v2H3V6zm0 6h18v2H3v-2zm0 6h18v2H3v-2z"/></svg>
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M3 6h18v2H3V6zm0 6h18v2H3v-2zm0 6h18v2H3v-2z"/>
+          </svg>
           Menu
         </button>
+
         <ul id="site-menu" class="menu">
-          <li><a href="#why">Why Us</a></li>
           <li><a href="#what">What We Do</a></li>
+          <li><a href="#trust">Why Us</a></li>
+          <li><a href="#garage">Garage</a></li>
           <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact">Call Now</a></li>
         </ul>
       </nav>
+
+      <div class="header-cta" aria-label="Call us">
+        <a href="tel:+5012231540">📞 223-1540</a>
+        <div class="sub">Open Until 5PM</div>
+      </div>
     </div>
   </header>
 
   <main id="main">
+    <!-- HERO -->
     <section class="hero">
       <div class="container">
-    
-        <h1>Heavy-Duty Parts, Expert Advice, and Same-Day Solutions for Belizean Fleets.</h1>
-        <p>Local, family-managed specialists in truck and bus parts. If we don’t have it, we can get it fast—so you can keep moving.</p>
+        <h1>Belize’s Most Trusted Heavy-Duty Truck Parts Supplier Since 1992</h1>
+        <p>In-stock inventory. Fast sourcing. Expert advice you can rely on.</p>
+        <p class="micro">Call now to check availability.</p>
 
-        <a class="btn btn--primary" href="tel:+5012231540" aria-label="Call 223-1540">
-          <img class="icon" src="icons/phone.svg" alt=""/>
-          Call 223-1540
-        </a>
+        <div class="hero-actions" role="group" aria-label="Primary actions">
+          <a class="btn btn--primary" href="tel:+5012231540" aria-label="Call 223-1540">
+            <img class="icon" src="icons/phone.svg" alt="" />
+            Call 223-1540
+          </a>
 
-        <a class="btn btn--outline" href="https://wa.me/5016108546" target="_blank" rel="noopener" aria-label="WhatsApp +501 610-8546">
-          <img class="icon" src="icons/whatsapp.svg" alt=""/>
-          WhatsApp +501 610-8546
-        </a>
+          <a class="btn btn--outline" href="https://wa.me/5016108546?text=Hello%2C%20I%E2%80%99m%20looking%20for%20a%20truck%20part.%20Can%20you%20check%20availability%20for%20me%3F" target="_blank" rel="noopener" aria-label="WhatsApp +501 610-8546">
+            <img class="icon" src="icons/whatsapp.svg" alt="" />
+            WhatsApp
+          </a>
+        </div>
+
+        <div class="micro" style="margin-top:.75rem;">
+          Speak directly with a parts specialist.
+        </div>
       </div>
     </section>
 
+    <!-- WHAT -->
     <section id="what" class="container section--divider">
       <h2 class="section__title">What We Do</h2>
       <p class="section__intro">
-        We carry a complete range of heavy-duty truck and bus parts—covering engines, transmissions, electrical, suspension, steering, brake, and cooling systems, plus accessories and fleet supplies.
-        <strong>If we don’t have it, we can get it.</strong>
+        We carry a complete range of heavy-duty truck and bus parts—engines, transmissions, electrical, suspension, steering, brakes, cooling systems, accessories, and fleet supplies.
+        <strong>If we don’t have it, we’ll source it fast.</strong>
       </p>
     </section>
 
-    <section id="why" class="section--alt section--divider">
+    <!-- TRUST -->
+    <section id="trust" class="section--alt section--divider">
       <div class="container">
-        <h2 class="section__title">Why Belize Chooses Us</h2>
-        <div class="grid">
-          <div class="card"><h3>Large In-Stock Selection</h3><p>Hard-to-find heavy-duty parts available locally—so downtime stays low.</p></div>
-          <div class="card"><h3>Trusted Since 1992</h3><p>Family-managed and Belizean owned, serving truckers, bus fleets, and mechanics for 30+ years.</p></div>
-          <div class="card"><h3>Expert, Friendly Service</h3><p>Knowledgeable staff who help you identify the right part the first time.</p></div>
-          <div class="card"><h3>Competitive Pricing</h3><p>Fair, transparent pricing and reliable sourcing when special orders are needed.</p></div>
-          <div class="card"><h3>Nationwide Reach</h3><p>Based in Belize City and helping customers across the country.</p></div>
-          <div class="card"><h3>Belizean Owned</h3><p>Proudly local—supporting Belize’s transport and logistics community.</p></div>
+        <h2 class="section__title">Why Mechanics and Fleet Owners Trust Us</h2>
+
+        <div class="grid" aria-label="Trust highlights">
+          <div class="card">
+            <h3>5-Star Rated Across Belize</h3>
+            <p>★★★★★ 5.0 on Google (3 reviews). Trusted locally for decades.</p>
+          </div>
+          <div class="card">
+            <h3>Parts in Stock — Less Downtime</h3>
+            <p>Hard-to-find heavy-duty parts available locally so you get back on the road faster.</p>
+          </div>
+          <div class="card">
+            <h3>Get the Right Part the First Time</h3>
+            <p>Speak with knowledgeable staff to avoid costly mistakes and repeat trips.</p>
+          </div>
+          <div class="card">
+            <h3>Fast Sourcing When Needed</h3>
+            <p>If it’s not on the shelf, we’ll help you get it—quickly and reliably.</p>
+          </div>
+        </div>
+
+        <div class="trust-strip" aria-label="Additional trust points">
+          <span>✔ Serving Belize Since 1992</span>
+          <span>✔ Belizean Owned</span>
+          <span>✔ Nationwide Reach</span>
+          <span>✔ Expert Advice</span>
         </div>
       </div>
     </section>
 
-    <section id="faq" class="container section--divider">
-      <h2 class="section__title">FAQ</h2>
-      <details><summary>Do you sell to individuals or only businesses?</summary><p>We proudly serve both individuals and businesses across Belize.</p></details>
-      <details><summary>Can you import or custom order parts not in stock?</summary><p>Yes. If we don’t have it, we can get it.</p></details>
-      <details><summary>Do you offer installation or just parts?</summary><p>We have a full-service garage on-site for professional installation.</p></details>
-      <details><summary>What payment methods do you accept?</summary><p>Cash, card, and bank transfer.</p></details>
-    </section>
+    <!-- MID-PAGE CALLOUT -->
+    <section class="container section--divider">
+      <div class="callout">
+        <h2 class="section__title">Need a Part Today?</h2>
+        <p>Speak directly with our parts team to confirm availability and pricing.</p>
 
-    <section id="contact" class="section--alt section--divider">
-      <div class="container">
-        <h2 class="section__title">Get in Touch</h2>
-        <p><strong>Address:</strong> Phillip Goldson Hwy, Belize City — <a href="https://www.google.com/maps/search/?api=1&query=GQ5R%2BHM+Belize+City" target="_blank" rel="noopener">Get directions</a></p>
-        <p><strong>Phone:</strong> <a href="tel:+5012231540">223-1540</a></p>
-        <p><strong>WhatsApp:</strong> <a href="https://wa.me/5016108546" target="_blank" rel="noopener">+501 610-8546</a></p>
-        <p><strong>Email:</strong> <a href="mailto:truckpartsofbelize@gmail.com">truckpartsofbelize@gmail.com</a></p>
-
-        <div><strong>Hours:</strong>
-          <ul class="hours-list" aria-label="Business hours">
-            <li><span>Monday</span><span>8:00 AM – 5:00 PM</span></li>
-            <li><span>Tuesday</span><span>8:00 AM – 5:00 PM</span></li>
-            <li><span>Wednesday</span><span>8:00 AM – 5:00 PM</span></li>
-            <li><span>Thursday</span><span>8:00 AM – 5:00 PM</span></li>
-            <li><span>Friday</span><span>8:00 AM – 5:00 PM</span></li>
-            <li><span>Saturday</span><span>8:00 AM – 3:00 PM</span></li>
-            <li><span>Sunday</span><span>CLOSED</span></li>
-          </ul>
-        </div>
-
-        <div class="map-wrap" aria-label="Map showing store location (GQ5R+HM Belize City)">
-          <iframe class="map-embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=GQ5R%2BHM+Belize+City&output=embed"
-            title="Truck Parts of Belize - Map (GQ5R+HM)"></iframe>
-        </div>
-
-        <div class="map-actions">
-          <a class="btn btn--primary" href="tel:+5012231540" aria-label="Call now">
-            <img class="icon" src="icons/phone.svg" alt=""/>
+        <div class="actions" role="group" aria-label="Call to action">
+          <a class="btn btn--primary" href="tel:+5012231540" aria-label="Call 223-1540">
+            <img class="icon" src="icons/phone.svg" alt="" />
             Call Now
           </a>
-          <a class="btn btn--outline" href="https://wa.me/5016108546" target="_blank" rel="noopener" aria-label="WhatsApp us">
-            <img class="icon" src="icons/whatsapp.svg" alt=""/>
+          <a class="btn btn--outline" href="https://wa.me/5016108546?text=Hello%2C%20I%E2%80%99m%20looking%20for%20a%20truck%20part.%20Can%20you%20check%20availability%20for%20me%3F" target="_blank" rel="noopener" aria-label="WhatsApp +501 610-8546">
+            <img class="icon" src="icons/whatsapp.svg" alt="" />
             WhatsApp
           </a>
-          <a class="btn btn--outline" href="https://www.google.com/maps/dir/?api=1&destination=GQ5R%2BHM+Belize+City" target="_blank" rel="noopener" aria-label="Get directions">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"/></svg>
-            Directions
-          </a>
         </div>
+      </div>
+    </section>
+
+    <!-- GARAGE -->
+    <section id="garage" class="section--alt section--divider">
+      <div class="container">
+        <h2 class="section__title">Full-Service Garage On-Site</h2>
+        <p class="section__intro">
+          Need installation or service? Our on-site garage supports your parts purchase with professional work you can trust.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="container section--divider">
+      <h2 class="section__title">FAQ</h2>
+
+      <details>
+        <summary>Do you sell to individuals or only businesses?</summary>
+        <p>We proudly serve both individuals and businesses across Belize.</p>
+      </details>
+
+      <details>
+        <summary>Can you import or custom order parts not in stock?</summary>
+        <p>Yes. If we don’t have it, we’ll source it fast.</p>
+      </details>
+
+      <details>
+        <summary>Do you offer installation or just parts?</summary>
+        <p>We have a full-service garage on-site for professional installation and service support.</p>
+      </details>
+
+      <details>
+        <summary>What payment methods do you accept?</summary>
+        <p>Cash, card, and bank transfer.</p>
+      </details>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section--alt section--divider">
+      <div class="container">
+        <h2 class="section__title">Call Now for Parts Availability</h2>
+
+        <div class="contact-lead">
+          <div class="call-block">
+            <div class="big">📞 <a href="tel:+5012231540" style="text-decoration:none;color:inherit;">223-1540</a></div>
+            <p class="small">Open Until 5PM • Speak directly with a parts specialist</p>
+
+            <div class="map-actions" role="group" aria-label="Primary contact actions">
+              <a class="btn btn--primary" href="tel:+5012231540" aria-label="Call 223-1540">
+                <img class="icon" src="icons/phone.svg" alt="" />
+                Call Now
+              </a>
+              <a class="btn btn--outline" href="https://wa.me/5016108546?text=Hello%2C%20I%E2%80%99m%20looking%20for%20a%20truck%20part.%20Can%20you%20check%20availability%20for%20me%3F" target="_blank" rel="noopener" aria-label="WhatsApp +501 610-8546">
+                <img class="icon" src="icons/whatsapp.svg" alt="" />
+                WhatsApp
+              </a>
+              <a class="btn btn--outline" href="https://www.google.com/maps/dir/?api=1&destination=GQ5R%2BHM+Belize+City" target="_blank" rel="noopener" aria-label="Get directions">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                  <path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"/>
+                </svg>
+                Directions
+              </a>
+            </div>
+
+            <div class="contact-lines" aria-label="Contact details" style="margin-top:1rem;">
+              <p><strong>WhatsApp:</strong><br />
+                <a href="https://wa.me/5016108546?text=Hello%2C%20I%E2%80%99m%20looking%20for%20a%20truck%20part.%20Can%20you%20check%20availability%20for%20me%3F" target="_blank" rel="noopener">+501 610-8546</a><br />
+                <a href="https://wa.me/5016679763?text=Hello%2C%20I%E2%80%99m%20looking%20for%20a%20truck%20part.%20Can%20you%20check%20availability%20for%20me%3F" target="_blank" rel="noopener">+501 667-9763</a>
+              </p>
+              <p><strong>Email:</strong> <a href="mailto:truckpartsofbelize@gmail.com">truckpartsofbelize@gmail.com</a></p>
+
+              <div>
+                <strong>Hours:</strong>
+                <ul class="hours-list" aria-label="Business hours">
+                  <li><span>Monday</span><span>8:00 AM – 5:00 PM</span></li>
+                  <li><span>Tuesday</span><span>8:00 AM – 5:00 PM</span></li>
+                  <li><span>Wednesday</span><span>8:00 AM – 5:00 PM</span></li>
+                  <li><span>Thursday</span><span>8:00 AM – 5:00 PM</span></li>
+                  <li><span>Friday</span><span>8:00 AM – 5:00 PM</span></li>
+                  <li><span>Saturday</span><span>8:00 AM – 3:00 PM</span></li>
+                  <li><span>Sunday</span><span>CLOSED</span></li>
+                </ul>
+              </div>
+
+              <p style="margin-top:1rem;">
+                <strong>Address:</strong> Phillip Goldson Hwy, Belize City —
+                <a href="https://www.google.com/maps/search/?api=1&query=GQ5R%2BHM+Belize+City" target="_blank" rel="noopener">Get directions</a>
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <div class="map-wrap" aria-label="Map showing store location (GQ5R+HM Belize City)">
+              <iframe class="map-embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=GQ5R%2BHM+Belize+City&output=embed"
+                title="Truck Parts of Belize - Map (GQ5R+HM)"></iframe>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   </main>
@@ -199,15 +640,17 @@
   <footer>
     <div class="container footer-row">
       <div>
-        <strong>Truck Parts of Belize Ltd.</strong><br>
-        <small> Belizean Owned • Family Operated • Since 1992  </small>
+        <strong>Truck Parts of Belize Ltd.</strong><br />
+        <small>Belizean Owned • Family Operated • Since 1992</small>
       </div>
+
       <div class="social">
         <a href="https://www.facebook.com/truckpartsbelize" target="_blank" rel="noopener" aria-label="Facebook">
-          <img class="icon" src="icons/facebook.svg" alt=""/>
+          <img class="icon" src="icons/facebook.svg" alt="" />
           Facebook
         </a>
       </div>
+
       <div class="credit">
         <a href="mailto:sheheen.awe@gmail.com?subject=Truck%20Parts%20of%20Belize%20Website" aria-label="Email Sheheen about Truck Parts of Belize Website">
           Designed by Sheheen
@@ -217,19 +660,58 @@
   </footer>
 
   <script>
-    const navBtn = document.querySelector('.nav-toggle');
-    const menu = document.getElementById('site-menu');
-    if (navBtn && menu){
-      navBtn.addEventListener('click', () => {
-        const isOpen = menu.classList.toggle('open');
-        navBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
-      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    // Mobile menu behavior:
+    // - toggle open/close
+    // - close on link click
+    // - close on outside click/tap
+    // - close on Escape key
+    // - close on resize to desktop
+    (function () {
+      const navBtn = document.getElementById('navToggle');
+      const menu = document.getElementById('site-menu');
+      if (!navBtn || !menu) return;
+
+      const openMenu = () => {
+        menu.classList.add('open');
+        navBtn.setAttribute('aria-expanded', 'true');
+      };
+
+      const closeMenu = () => {
         menu.classList.remove('open');
-        navBtn.setAttribute('aria-expanded','false');
-      }));
-    }
+        navBtn.setAttribute('aria-expanded', 'false');
+      };
+
+      const isMenuOpen = () => menu.classList.contains('open');
+
+      navBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        isMenuOpen() ? closeMenu() : openMenu();
+      });
+
+      // Close when clicking a menu link
+      menu.querySelectorAll('a').forEach((a) => {
+        a.addEventListener('click', () => closeMenu());
+      });
+
+      // Close when clicking/tapping outside menu + toggle
+      document.addEventListener('click', (e) => {
+        if (!isMenuOpen()) return;
+        const target = e.target;
+        const clickedInsideMenu = menu.contains(target);
+        const clickedToggle = navBtn.contains(target);
+        if (!clickedInsideMenu && !clickedToggle) closeMenu();
+      }, { passive: true });
+
+      // Close on Escape
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && isMenuOpen()) closeMenu();
+      });
+
+      // Close on resize to desktop
+      window.addEventListener('resize', () => {
+        if (window.matchMedia('(min-width: 720px)').matches) closeMenu();
+      });
+    })();
   </script>
 </body>
 </html>
-
